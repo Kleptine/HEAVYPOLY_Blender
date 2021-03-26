@@ -30,12 +30,12 @@ def Keymap_Heavypoly():
     k_manip = 'LEFTMOUSE'
     k_cursor = 'RIGHTMOUSE'
     k_nav = 'MIDDLEMOUSE'
-    k_menu = 'SPACE'
+    k_menu = 'BACK_SPACE'
     k_select = 'LEFTMOUSE'
 
     def Global_Keys():
 
-        kmi = km.keymap_items.new("screen.userpref_show","TAB","PRESS", ctrl=True)
+        #kmi = km.keymap_items.new("screen.userpref_show","TAB","PRESS", ctrl=True)
         # kmi = km.keymap_items.new("view3d.smart_scale","S","PRESS")
         kmi = km.keymap_items.new("wm.window_fullscreen_toggle","F11","PRESS")
         kmi = km.keymap_items.new('screen.animation_play', 'PERIOD', 'PRESS')
@@ -50,20 +50,17 @@ def Keymap_Heavypoly():
     km = kc.keymaps.new('Window', space_type='EMPTY', region_type='WINDOW', modal=False)
     Global_Keys()
     kmi = km.keymap_items.new('object.hide_viewport', 'H', 'PRESS')
-    kmi = km.keymap_items.new('wm.save_homefile', 'U', 'PRESS', ctrl=True)     
-    kmi = km.keymap_items.new('transform.translate', 'SPACE', 'PRESS')
+    kmi = km.keymap_items.new('wm.save_homefile', 'U', 'PRESS', ctrl=True)    
 
     kmi = km.keymap_items.new('view3d.smart_delete', 'X', 'PRESS')
     kmi = km.keymap_items.new('mesh.dissolve_mode', 'X', 'PRESS',ctrl=True)
-#kmi = km.keymap_items.new('transform.resize', 'SPACE', 'PRESS', alt=True)
-    kmi = km.keymap_items.new('transform.rotate', 'C', 'PRESS')
     kmi = km.keymap_items.new("wm.call_menu_pie", k_menu,"PRESS",ctrl=True ,shift=True, alt=True).properties.name="HP_MT_pie_areas"
     kmi = km.keymap_items.new("wm.call_menu_pie", 'TAB',"PRESS",shift=True).properties.name="HP_MT_pie_areas"
     kmi = km.keymap_items.new("wm.revert_without_prompt","N","PRESS", alt=True)
     kmi = km.keymap_items.new("screen.redo_last","D","PRESS")
-    kmi = km.keymap_items.new('wm.console_toggle', 'TAB', 'PRESS', ctrl=True, shift=True)     
+    # kmi = km.keymap_items.new('wm.console_toggle', 'TAB', 'PRESS', ctrl=True, shift=True)     
 
-    kmi = km.keymap_items.new("wm.call_menu_pie","S","PRESS", ctrl=True).properties.name="HP_MT_pie_save"
+    kmi = km.keymap_items.new("wm.call_menu_pie","S","PRESS", alt=True).properties.name="HP_MT_pie_save"
     kmi = km.keymap_items.new("wm.call_menu_pie","S","PRESS", ctrl=True, shift=True).properties.name="HP_MT_pie_importexport"
     kmi = km.keymap_items.new('script.reload', 'U', 'PRESS', shift=True)
     kmi = km.keymap_items.new("screen.repeat_last","THREE","PRESS", ctrl=True, shift=True)
@@ -141,7 +138,7 @@ def Keymap_Heavypoly():
     kmi = km.keymap_items.new("view3d.smart_scale","S","PRESS")
 #    kmi = km.keymap_items.new('view3d.render_border', 'B', 'PRESS', shift=True)
 #    kmi = km.keymap_items.new('view3d.clear_render_border', 'B', 'PRESS', shift=True, ctrl=True)
-    kmi = km.keymap_items.new('mesh.hp_extrude', 'SPACE', 'PRESS', shift=True)
+    kmi = km.keymap_items.new('mesh.hp_extrude', 'BACK_SPACE', 'PRESS')
 
     kmi = km.keymap_items.new('view3d.render_border', 'B', 'PRESS',shift=True, ctrl=True)
     kmi = km.keymap_items.new("wm.call_menu_pie", k_menu,"PRESS",ctrl=True ,shift=True, alt=True).properties.name="HP_MT_pie_areas"
@@ -150,7 +147,7 @@ def Keymap_Heavypoly():
     kmi = km.keymap_items.new('view3d.zoom', k_nav, 'PRESS', ctrl=True)
     kmi = km.keymap_items.new('view3d.rotate', k_nav, 'PRESS')
     kmi = km.keymap_items.new('view3d.manipulator', k_manip, 'PRESS')
-    kmi = km.keymap_items.new("wm.call_menu_pie", k_menu,"PRESS",ctrl=True).properties.name="HP_MT_pie_select"
+    kmi = km.keymap_items.new("wm.call_menu_pie", "TAB","PRESS",ctrl=True).properties.name="HP_MT_pie_select"
     kmi = km.keymap_items.new("wm.call_menu_pie", k_menu, 'PRESS',ctrl=True, alt=True).properties.name="HP_MT_pie_rotate90"
     kmi = km.keymap_items.new("wm.call_menu_pie", 'V', 'PRESS').properties.name="HP_MT_pie_view"
     kmi = km.keymap_items.new('wm.call_menu_pie', k_menu,'PRESS',ctrl=True, shift=True).properties.name="HP_MT_pie_pivots"
@@ -168,7 +165,7 @@ def Keymap_Heavypoly():
     kmi = km.keymap_items.new('view3d.select_box', 'EVT_TWEAK_L', 'ANY',shift=True).properties.mode='ADD'
     kmi = km.keymap_items.new('view3d.select_box', 'EVT_TWEAK_L', 'ANY').properties.mode='SET'
     kmi = km.keymap_items.new("wm.search_menu","FIVE","PRESS")
-    kmi = km.keymap_items.new("view3d.subdivision_toggle","TAB","PRESS")
+    kmi = km.keymap_items.new("view3d.subdivision_toggle","TAB","PRESS",shift=True)
     kmi = km.keymap_items.new("view3d.smart_snap_cursor","RIGHTMOUSE","PRESS",ctrl=True)
     kmi = km.keymap_items.new("view3d.smart_snap_origin","RIGHTMOUSE","PRESS",ctrl=True, shift=True)
     kmi = km.keymap_items.new("view3d.smart_snap_origin_collection","RIGHTMOUSE","PRESS",ctrl=True, shift=True, alt=True)
@@ -186,8 +183,7 @@ def Keymap_Heavypoly():
     kmi = km.keymap_items.new('view3d.select_through_border_sub', 'EVT_TWEAK_L', 'ANY',ctrl=True)
     kmi = km.keymap_items.new("wm.call_menu_pie","A","PRESS", shift=True).properties.name="HP_MT_pie_add"
     kmi = km.keymap_items.new("wm.call_menu","W","PRESS").properties.name="VIEW3D_MT_edit_mesh_context_menu"
-    kmi = km.keymap_items.new("screen.userpref_show","TAB","PRESS", ctrl=True)
-    kmi = km.keymap_items.new("view3d.subdivision_toggle","TAB","PRESS")
+    kmi = km.keymap_items.new("view3d.subdivision_toggle","TAB","PRESS", shift=True)
 #    kmi = km.keymap_items.new('mesh.select_all', k_select, 'CLICK', ctrl=True)
 #    kmi_props_setattr(kmi.properties, 'action', 'INVERT')
     kmi = km.keymap_items.new('mesh.shortest_path_pick', 'LEFTMOUSE', 'CLICK',ctrl=True, shift=True).properties.use_fill=True
